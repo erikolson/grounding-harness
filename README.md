@@ -1,5 +1,7 @@
 # grounding
 
+[![ci](https://github.com/erikolson/grounding-harness/actions/workflows/ci.yml/badge.svg)](https://github.com/erikolson/grounding-harness/actions/workflows/ci.yml)
+
 A grounding harness for LLM output. Every claim the model makes carries a
 citation, and only the claims a verifier can trace back to the source survive.
 Everything else is dropped and reported, never smuggled into the answer.
