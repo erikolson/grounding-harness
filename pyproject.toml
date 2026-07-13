@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "grounding-harness"
+version = "0.1.0"
+description = "A domain-independent grounding harness: every LLM claim carries a citation, and only claims a tiered verifier can trace to the source survive."
+requires-python = ">=3.10"
+dependencies = []          # the core has zero third-party dependencies, on purpose
+
+[project.optional-dependencies]
+youtube = ["youtube-transcript-api"]
+anthropic = ["anthropic"]   # only needed for the API transport; the CLI one needs no key
+dev = ["pytest"]
+
+[tool.setuptools]
+packages = ["grounding"]   # ONLY the spine is packaged; adapters and tests are examples
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
